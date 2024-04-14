@@ -1,11 +1,37 @@
 import React from 'react'
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
+
+
+
 const Main = () => {
+
+    useGSAP(() => {
+
+
+        gsap.from(".main", {
+            y: 360,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 1.8,
+            ease: 'power3.out'
+
+        });
+        
+
+    })
+
+
+
+
     return (
         <>
             <section className="text-gray-600 body-font overflow-hidden">
                 <div className="container px-5 my-10 mx-auto">
-                    <div className="lg:w-4/5 mx-auto flex flex-wrap">
+                    <div className="main lg:w-4/5 mx-auto flex flex-wrap">
                         <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded-lg" src="https://ih1.redbubble.net/image.259719003.5007/ssrco,classic_tee,two_models,fafafa:ca443f4786,front,tall_portrait,750x1000.1u7.webp" />
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 dark:text-white">
                             <h2 className="text-sm title-font text-gray-500 dark:text-white tracking-widest">BRAND NAME</h2>

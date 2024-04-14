@@ -1,8 +1,5 @@
 import React, { useState, useContext } from 'react'
 
-// import { UserContextProvider } from '../context/context'
-
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 import { UserContext } from '../context/context'
 
@@ -12,10 +9,8 @@ const Footer = () => {
     const [email, setemail] = useState('');
     const [location, setlocation] = useState('');
 
-    const { setUser } = useContext(UserContext);
-    // h no 680, mansurpur, muzaffarnagar ,UP
-    // aryanbarodwal@gmail.com
-    // aryan barodwal
+    const { setUser } = useContext(UserContext); 
+    
 
     const handleSummit = (e) => {
         e.preventDefault();
@@ -28,19 +23,8 @@ const Footer = () => {
         <section className="text-gray-600 body-font relative ">
             <div className="container px-5 py-24 mx-auto flex  sm:flex-nowrap flex-wrap ">
                 <div className="lg:w-2/3 md:w-1/2 bg-gray-300 0 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
-                    {/* <Map google={this.props.google} zoom={14}>
-
-                        <Marker onClick={this.onMarkerClick}
-                            name={'Current location'} />
-
-                        <InfoWindow onClose={this.onInfoWindowClose}>
-                            {/* <div>
-                                <h1>{this.state.selectedPlace.name}</h1>
-                            </div> 
-                        </InfoWindow>
-                    </Map> */}
                   
-                    <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md w[56%]">
+                    <div className="bg-white relative flex flex-wrap px-4 py-6 rounded shadow-md w-[60%]">
                         <div className="lg:w-1/2 px-6 w-[32%]">
                             <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
                             <p className="mt-1">{User.location}</p>
@@ -55,7 +39,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 p-[35px] rounded-lg">
+                <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 p-[35px] rounded-lg flex-wrap">
                     <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
                     <p className="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
                     {/* starts here! */}
@@ -85,6 +69,3 @@ const Footer = () => {
 
 export default Footer
 
-// export default GoogleApiWrapper({
-//   apiKey: ("AIzaSyCZQdWZWsNyakL30EbvVherj04c9HcqFc8")
-// })(Footer)
